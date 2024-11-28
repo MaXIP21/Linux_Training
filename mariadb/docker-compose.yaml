@@ -10,7 +10,9 @@ services:
       - db-network
     deploy:
       mode: replicated
-      replicas: 1
+      replicas: 2
+      placement:
+        max_replicas_per_node: 1
     volumes:
       - /docker/mariadb/db:/var/lib/mysql
       - /docker/mariadb/backup:/dbbackup
