@@ -21,3 +21,9 @@ The networks which I usually create in advance:
 
 - db-network : this is where the applications can connect to the mariadb database.
 - traefik-network : this is the network where you can expose your services to the outside world using traefik.
+
+In order to create them you can run the following commands on the swarm master node.
+```
+docker network create --driver overlay --attachable db-network
+docker network create --driver overlay --attachable traefik-network
+```
